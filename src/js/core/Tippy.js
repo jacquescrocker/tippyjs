@@ -137,6 +137,9 @@ export class Tippy {
       if (options.sticky) {
         _makeSticky.call(this)
       }
+      
+      popper.addEventListener("mouseenter", (e) => { _enter.call(this, e) })
+      popper.addEventListener("mouseleave", () => { _leave.call(this) })
 
       setVisibilityState([tooltip, backdrop], 'visible')
 

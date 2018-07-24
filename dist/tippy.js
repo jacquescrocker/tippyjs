@@ -3400,6 +3400,13 @@ var Tippy = function () {
           _makeSticky.call(_this);
         }
 
+        popper.addEventListener("mouseenter", function (e) {
+          _enter.call(_this, e);
+        });
+        popper.addEventListener("mouseleave", function () {
+          _leave.call(_this);
+        });
+
         setVisibilityState([tooltip, backdrop], 'visible');
 
         _onTransitionEnd.call(_this, duration, function () {
